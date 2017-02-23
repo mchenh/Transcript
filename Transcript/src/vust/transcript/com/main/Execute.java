@@ -19,7 +19,7 @@ public class Execute {
 	public void readDataBase() throws Exception {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connect = DriverManager.getConnection("jdbc:mysql://serverIP/database-name?user=vustus_vustus&password=Temp1233");
+			connect = DriverManager.getConnection("jdbc:mysql://166.63.123.163/vust_application?user=vustus_vustus&password=Temp1233");
 			
 			statement = connect.createStatement();
 			resultSet = statement.executeQuery("select * from database-name.table-name");
@@ -55,5 +55,9 @@ public class Execute {
 		} catch (Exception e) {
 			System.out.println("Error closing: " + e.getMessage());
 		}
+	}
+	
+	public static void main(String args[]) {
+		this.readDataBase();
 	}
 }
